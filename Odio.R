@@ -6,8 +6,8 @@ library(Rfacebook)
 library(shinydashboard)
 library(shiny)
 #Guardar nuestro token en un objeto de R
-token <- "EAAHMe4DApvcBANyBjZCNqZBpRQzgDoOUX8OJFZCBqCZC7yyX1FYU4r0M5JNv6kfr1KFCe40Wyike5UldbNb9pxPZA2FoDvIwOxMAHRfixZC4qRfPwnmFeRrmfAAv26VGR32FJQcq5AueULWRdL9ZC0ZAnibf8q9Iv3s1t2Ww01xfsS2HrvWctzoaj3sgEunLaA5Spiii7PZB5ugZDZD"
-samuelp <- getPage("odiolaestadistica", token, n = 300, since='2018/04/01', until='2018/12/22')
+token <- "EAAHMe4DApvcBACgJYZCje1dFFkcHayFY5UaxmZCAR8ZCD3rrVk9aZB45U7kI5wC5hYUqAqtoTAR3QDdKPpOpuxXtlk2HZCnSahGJDSZCxkLEXkjGkm1NmAtcJEBW6F2ZCZAqpAUXAfekfUneZCKZAhhFZBbaGaKLs0aQAlfscanIqsIAqyUj2hqjbGHVuPrGrF4n50ZD"
+samuelp <- getPage("odiolaestadistica", token, n = 350, since='2018/04/01', until='2019/02/15')
 #Ya tenemos cargada nuestra data de odiola estadistica
 #NO BORRAR EL TOKEN
 #Podemos cambiar la variable n, since y until
@@ -75,10 +75,12 @@ ggplot(data= samuelp) + geom_line(mapping = aes(datetime,comments_count)) + geom
 #########################################################
 data <- read_xls("tri1.xls")
 glimpse(data)
-data <- data %>%
-  arrange(desc(Publicado))
-head(data)
+#data <- data %>%
+ # arrange(desc(Publicado))
+
+data.frame(head(data))
 summary(data[,-c(1)])
+summary(data)
 ggplot(data) + geom_line(mapping = aes(data$Publicado, data$`Lifetime Post Total Impressions`)) + geom_smooth(mapping = aes(data$Publicado,data$`Lifetime Post Total Reach`), method = 'lm')
 ggplot(data) + geom_line(aes(data$Publicado,data$`Lifetime Post Total Reach`)) + geom_smooth(mapping = aes(data$Publicado,data$`Lifetime Post Total Impressions`), method = 'lm')
 ggplot(data) + geom_line(aes(data$Publicado,data$`Lifetime Engaged Users`)) + geom_smooth(mapping = aes(data$Publicado,data$`Lifetime Engaged Users`), method = 'lm')
