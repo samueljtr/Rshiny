@@ -1,6 +1,10 @@
+
+library(shiny)
+
+# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-  token <- "EAAHMe4DApvcBANyBjZCNqZBpRQzgDoOUX8OJFZCBqCZC7yyX1FYU4r0M5JNv6kfr1KFCe40Wyike5UldbNb9pxPZA2FoDvIwOxMAHRfixZC4qRfPwnmFeRrmfAAv26VGR32FJQcq5AueULWRdL9ZC0ZAnibf8q9Iv3s1t2Ww01xfsS2HrvWctzoaj3sgEunLaA5Spiii7PZB5ugZDZD"
-  samuelp <- getPage("odiolaestadistica", token, n = 300, since='2018/04/01', until='2018/12/22')
+  token <- "EAAHMe4DApvcBACgJYZCje1dFFkcHayFY5UaxmZCAR8ZCD3rrVk9aZB45U7kI5wC5hYUqAqtoTAR3QDdKPpOpuxXtlk2HZCnSahGJDSZCxkLEXkjGkm1NmAtcJEBW6F2ZCZAqpAUXAfekfUneZCKZAhhFZBbaGaKLs0aQAlfscanIqsIAqyUj2hqjbGHVuPrGrF4n50ZD"
+  samuelp <- getPage("odiolaestadistica", token, n = 350, since='2018/04/01', until='2019/02/15')
   format.facebook.date <- function(datestring) {
     date <- as.POSIXct(datestring, format = "%Y-%m-%dT%H:%M:%S+0000", tz = "GMT")
   }
