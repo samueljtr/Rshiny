@@ -1,3 +1,7 @@
+
+library(shiny)
+
+# Define UI for application that draws a histogram
 shinyUI(dashboardPage(
   dashboardHeader(title = "Odio la estadistica", dropdownMenuOutput("msgOutput"),
                   dropdownMenu(type= "notifications",
@@ -60,18 +64,18 @@ shinyUI(dashboardPage(
             h3("Social Network",br(),"Followers"),
               #Contenido de la pestaña3
             fluidRow(
-              infoBox("Twitter", 97 , icon =  icon("dove"), color = "aqua"),
-              infoBox( "Facebook" , 3722 , icon = icon("globe"), color = "navy"),
-              infoBox( "Instagram" , 1211 , icon = icon("camera-retro"), color = "light-blue")
+              infoBox("Twitter +", 111-97 , icon =  icon("dove"), color = "aqua"),
+              infoBox( "Facebook +" , 3845-3722 , icon = icon("globe"), color = "navy"),
+              infoBox( "Instagram +" , 1320-1211 , icon = icon("camera-retro"), color = "light-blue")
               ),
             fluidRow(
-              valueBox(97 ,"twitter.com/odioestadistica" ,icon = icon("dove"), color= "aqua")
+              valueBox(111 ,"twitter.com/odioestadistica" ,icon = icon("dove"), color= "aqua")
               ),
             fluidRow(
-              valueBox(1211 , "instagram.com/odiolaestadistica/" , icon = icon("camera-retro"), color = "light-blue")
+              valueBox(1320 , "instagram.com/odiolaestadistica/" , icon = icon("camera-retro"), color = "light-blue")
               ),
             fluidRow(
-              valueBox(3722 , "facebook.com/odiolaestadistica/" , icon = icon("globe"), color = "navy")
+              valueBox(3845 , "facebook.com/odiolaestadistica/" , icon = icon("globe"), color = "navy")
               
             )
             )
